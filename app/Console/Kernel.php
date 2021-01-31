@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        ParseList::class,
+        Commands\Scan::class,
     ];
 
     /**
