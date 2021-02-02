@@ -3,6 +3,9 @@
 namespace App\Observers;
 
 use Spatie\Crawler\CrawlObservers\CrawlObserver;
+use GuzzleHttp\Exception\RequestException;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\UriInterface;
 
 class ZeroplexObserver extends CrawlObserver
 {
