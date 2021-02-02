@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Spatie\Crawler\Crawler;
+use App\Observers\ZeroplexObserver;
+use App\MyCrawlProfile;
 
 class Scan extends Command
 {
@@ -38,14 +40,18 @@ class Scan extends Command
      */
     public function handle()
     {
+        $this->info('starting ....');
+
         Crawler::create()
             ->ignoreRobots()
             ->setConcurrency(1)
-            ->setDelayBetweenRequests(500) // in ms
+            //->setDelayBetweenRequests(500) // in ms
+            ->setCrawlProfile(new MyCrawlProfile())
             ->setParseableMimeTypes([
                 'text/plain',
                 'text/html',
             ])
+            ->setCrawlObserver(new ZeroplexObserver())
             ->startCrawling('https://blog.zeroplex.tw');
     }
 }
