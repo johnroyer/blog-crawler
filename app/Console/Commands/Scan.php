@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Spatie\Crawler\Crawler;
 
 class Scan extends Command
 {
@@ -37,6 +38,14 @@ class Scan extends Command
      */
     public function handle()
     {
-        return 0;
+        Crawler::create()
+            ->ignoreRobots()
+            ->setConcurrency(1)
+            ->setDelayBetweenRequests(500) // in ms
+            ->setParseableMimeTypes([
+                'text/plain',
+                'text/html',
+            ])
+            ->startCrawling('https://blog.zeroplex.tw');
     }
 }
