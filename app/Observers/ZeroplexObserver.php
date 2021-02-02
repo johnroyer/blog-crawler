@@ -11,8 +11,7 @@ class ZeroplexObserver extends CrawlObserver
 {
     public function willCrawl(UriInterface $url)
     {
-        var_dump( strval($url) );
-        exit;
+        var_dump( strval($url)) ;
     }
 
     public function crawled(
@@ -20,8 +19,9 @@ class ZeroplexObserver extends CrawlObserver
         ResponseInterface $response,
         ?UriInterface $foundOnUrl = null
     ) {
-        echo strval($url);
-        sleep(15);
+        if ("200" != $response->getStatusCode()) {
+            return;
+        }
     }
 
     public function crawlFailed(
