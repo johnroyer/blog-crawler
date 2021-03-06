@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Spatie\Crawler\Crawler;
 use App\Observers\ZeroplexObserver;
-use App\MyCrawlProfile;
+use App\BloggerProfile;
 
 class Scan extends Command
 {
@@ -46,7 +46,7 @@ class Scan extends Command
             ->ignoreRobots()
             ->setConcurrency(1)
             ->setDelayBetweenRequests(1000) // in ms
-            ->setCrawlProfile(new MyCrawlProfile())
+            ->setCrawlProfile(new BloggerProfile())
             ->setParseableMimeTypes([
                 'text/plain',
                 'text/html',
