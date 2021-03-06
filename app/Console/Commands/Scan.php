@@ -45,7 +45,7 @@ class Scan extends Command
         Crawler::create()
             ->ignoreRobots()
             ->setConcurrency(1)
-            //->setDelayBetweenRequests(500) // in ms
+            ->setDelayBetweenRequests(1000) // in ms
             ->setCrawlProfile(new MyCrawlProfile())
             ->setParseableMimeTypes([
                 'text/plain',
