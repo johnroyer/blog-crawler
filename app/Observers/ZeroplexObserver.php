@@ -29,7 +29,14 @@ class ZeroplexObserver extends CrawlObserver
         RequestException $RequestException,
         ?UriInterface $foundOnUrl = null
     ) {
-        echo 'Failed:  ' . $strval($url);
+        if ('500' == $response->getStatusCode()) {
+            return;
+        }
+
+        if ('404' == $response->getStatusCode()) {
+            // delete DB record
+            return;
+        }
     }
 
     public function finishedCrawling()
