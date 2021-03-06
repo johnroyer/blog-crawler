@@ -5,7 +5,7 @@ namespace App;
 use Spatie\Crawler\CrawlProfiles\CrawlProfile;
 use Psr\Http\Message\UriInterface;
 
-class MyCrawlProfile extends CrawlProfile
+class BloggerProfile extends CrawlProfile
 {
     public function shouldCrawl(UriInterface $url): bool
     {
