@@ -47,6 +47,7 @@ class Scan extends Command
             ->setConcurrency(1)
             ->setDelayBetweenRequests(1000) // in ms
             ->setCrawlProfile(new BloggerProfile())
+            ->setMaximumDepth(2)
             ->setParseableMimeTypes([
                 'text/plain',
                 'text/html',
