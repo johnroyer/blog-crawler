@@ -9,9 +9,9 @@ class MyCrawlProfile extends CrawlProfile
 {
     public function shouldCrawl(UriInterface $url): bool
     {
-        if ('blog.zeroplex.tw' == $url->getHost()) {
-            return true;
+        if ('blog.zeroplex.tw' != $url->getHost()) {
+            return false;
         }
-        return false;
+        return true;
     }
 }
