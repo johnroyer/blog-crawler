@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Crawler;
 
 use Illuminate\Console\Command;
 use Spatie\Crawler\Crawler;
-use App\Observers\ZeroplexObserver;
-use App\BloggerProfile;
+use Crawler\ZeroplexObserver;
+use Crawler\BloggerProfile;
 
 class Scan extends Command
 {
