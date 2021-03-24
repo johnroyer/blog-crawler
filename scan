@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Illuminate\Console\Command;
+use Spatie\Crawler\Crawler;
+use Crawler\ZeroplexObserver;
+use Crawler\BloggerProfile;
+
+if (isset ($argv[1])) {
+    $url = $argv[1];
+} else {
+    $url = 'https://blog.zeroplex.tw';
+}
+
+echo "starting ..... \n\n";
+
+    Crawler::create()
+    ->ignoreRobots()
+    ->setConcurrency(1)
+    ->setCrawlProfile(new BloggerProfile())
+    ->setMaximumDepth(3)
+    ->setParseableMimeTypes([
+            'text/plain',
+            'text/html',
+    ])
+    ->setCrawlObserver(new ZeroplexObserver())
+    ->startCrawling($url);
+
+echo "Finished \n\n";

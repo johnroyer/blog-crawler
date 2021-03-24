@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Observers;
+namespace Crawler;
 
 use Spatie\Crawler\CrawlObservers\CrawlObserver;
 use GuzzleHttp\Exception\RequestException;
@@ -19,9 +19,6 @@ class ZeroplexObserver extends CrawlObserver
         ResponseInterface $response,
         ?UriInterface $foundOnUrl = null
     ) {
-        if ("200" != $response->getStatusCode()) {
-            return;
-        }
     }
 
     public function crawlFailed(
@@ -29,14 +26,6 @@ class ZeroplexObserver extends CrawlObserver
         RequestException $RequestException,
         ?UriInterface $foundOnUrl = null
     ) {
-        if ('500' == $response->getStatusCode()) {
-            return;
-        }
-
-        if ('404' == $response->getStatusCode()) {
-            // delete DB record
-            return;
-        }
     }
 
     public function finishedCrawling()
