@@ -8,6 +8,11 @@ use Spatie\Crawler\Crawler;
 use Crawler\ZeroplexObserver;
 use Crawler\BloggerProfile;
 
+if (isset ($argv[1])) {
+    $url = $argv[1];
+} else {
+    $url = 'https://blog.zeroplex.tw';
+}
 
 echo "starting ..... \n\n";
 
@@ -15,12 +20,12 @@ echo "starting ..... \n\n";
     ->ignoreRobots()
     ->setConcurrency(1)
     ->setCrawlProfile(new BloggerProfile())
-    ->setMaximumDepth(2)
+    ->setMaximumDepth(3)
     ->setParseableMimeTypes([
             'text/plain',
             'text/html',
     ])
     ->setCrawlObserver(new ZeroplexObserver())
-    ->startCrawling('https://blog.zeroplex.tw');
+    ->startCrawling($url);
 
 echo "Finished \n\n";
