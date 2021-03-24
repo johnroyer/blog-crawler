@@ -6,6 +6,7 @@ use Spatie\Crawler\CrawlObservers\CrawlObserver;
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
+use Crawler\Cache;
 
 class ZeroplexObserver extends CrawlObserver
 {
@@ -18,6 +19,7 @@ class ZeroplexObserver extends CrawlObserver
         ResponseInterface $response,
         ?UriInterface $foundOnUrl = null
     ) {
+        Cache::set(strval($url));
     }
 
     public function crawlFailed(
