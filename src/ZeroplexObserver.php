@@ -18,11 +18,6 @@ class ZeroplexObserver extends CrawlObserver
         ResponseInterface $response,
         ?UriInterface $foundOnUrl = null
     ) {
-        if (1 == preg_match('/blog.zeroplex.tw/', $url->getHost())) {
-            echo strval($url) . "\n";
-            return true;
-        }
-        return false;
     }
 
     public function crawlFailed(
