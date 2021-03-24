@@ -4,6 +4,7 @@ namespace Crawler;
 
 use Spatie\Crawler\CrawlProfiles\CrawlProfile;
 use Psr\Http\Message\UriInterface;
+use Crawler\Cache;
 
 class BloggerProfile extends CrawlProfile
 {
@@ -21,6 +22,11 @@ class BloggerProfile extends CrawlProfile
             return false;
         }
 
+        // check if duplicated
+        if (true == Cache::has(strval($url))) {
+            return false;
+        }
+        echo strval($url) . "\n";
         return true;
     }
 }
