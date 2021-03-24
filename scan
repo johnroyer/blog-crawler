@@ -20,7 +20,7 @@ echo "starting ..... \n\n";
     ->ignoreRobots()
     ->setConcurrency(1)
     ->setCrawlProfile(new BloggerProfile())
-    ->setMaximumDepth(3)
+    ->setMaximumDepth(100)
     ->setParseableMimeTypes([
             'text/plain',
             'text/html',
