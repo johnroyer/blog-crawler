@@ -3,4 +3,24 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-echo "Hello World\n";
+use Illuminate\Console\Command;
+use Spatie\Crawler\Crawler;
+use Crawler\ZeroplexObserver;
+use Crawler\BloggerProfile;
+
+
+echo "starting ..... \n\n";
+
+    Crawler::create()
+    ->ignoreRobots()
+    ->setConcurrency(1)
+    ->setCrawlProfile(new BloggerProfile())
+    ->setMaximumDepth(2)
+    ->setParseableMimeTypes([
+            'text/plain',
+            'text/html',
+    ])
+    ->setCrawlObserver(new ZeroplexObserver())
+    ->startCrawling('https://blog.zeroplex.tw');
+
+echo "Finished \n\n";
