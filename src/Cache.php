@@ -15,6 +15,6 @@ class Cache
     public static function has(string $url): bool
     {
         $hash = md5($url);
-        return isset(static::$list);
+        return key_exists($hash, static::$list);
     }
 }
