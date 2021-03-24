@@ -28,4 +28,4 @@ echo "starting ..... \n\n";
     ->setCrawlObserver(new ZeroplexObserver())
     ->startCrawling($url);
 
-echo "Finished \n\n";
+echo "\nFinished \n";
