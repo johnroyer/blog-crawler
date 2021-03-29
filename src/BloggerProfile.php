@@ -26,7 +26,6 @@ class BloggerProfile extends CrawlProfile
         if (true == Cache::has(strval($url))) {
             return false;
         }
-        echo strval($url) . "\n";
         return true;
     }
 }

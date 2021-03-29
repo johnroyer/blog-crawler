@@ -20,6 +20,7 @@ class ZeroplexObserver extends CrawlObserver
         ?UriInterface $foundOnUrl = null
     ) {
         Cache::set(strval($url));
+        echo strval($url) . "\n";
     }
 
     public function crawlFailed(
