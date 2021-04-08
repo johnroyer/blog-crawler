@@ -10,6 +10,8 @@ use Crawler\Cache;
 
 class ZeroplexObserver extends CrawlObserver
 {
+    private $counter = 0;
+
     public function willCrawl(UriInterface $url)
     {
     }
@@ -20,7 +22,10 @@ class ZeroplexObserver extends CrawlObserver
         ?UriInterface $foundOnUrl = null
     ) {
         Cache::set(strval($url));
-        echo strval($url) . "\n";
+
+        $url = urldecode(strval($url));
+        $url = mb_substr($url, -60, null, 'utf8');
+        echo sprintf("%6s - %-60s\n", ++$this->counter, $url);
     }
 
     public function crawlFailed(
