@@ -29,3 +29,17 @@ In this demo, my filters are:
   - RSS feeds
   - additional pages of tags and articals
   - articals that is older then year 2021
+
+
+### Action Hooks
+
+My hooks sets in `src/ZeroplexObserver`.
+
+- `willCrawl()`: actions before crawler starting fetch web page.
+- `crawled()`: action after crawler successfully get data from web page.
+- `crawlFailed()`: actions when crawler failed to get data from web page. You can save URL to an retry list or something else.
+
+
+## More
+
+I implement an simple cache function in `src/Cache`. It is used to save URLs which has crawled. Make crawler not to fetch the same URL again.
