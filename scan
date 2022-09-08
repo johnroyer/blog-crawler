@@ -18,7 +18,7 @@ echo "starting ..... \n\n";
 
     Crawler::create()
     ->ignoreRobots()
-    ->setConcurrency(2)
+    ->setConcurrency(6)
     ->setCrawlProfile(new BloggerProfile())
     ->setParseableMimeTypes([
             'text/plain',
