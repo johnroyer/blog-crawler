@@ -3,28 +3,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Illuminate\Console\Command;
-use Spatie\Crawler\Crawler;
-use Crawler\ZeroplexObserver;
-use Crawler\BloggerProfile;
+$crawler = new \Zeroplex\Crawler\Crawler();
 
-if (isset ($argv[1])) {
-    $url = $argv[1];
-} else {
-    $url = 'https://blog.zeroplex.tw';
-}
+$crawler->addHandler(new \Crawler\BlogHandler());
 
-echo "starting ..... \n\n";
-
-    Crawler::create()
-    ->ignoreRobots()
-    ->setConcurrency(6)
-    ->setCrawlProfile(new BloggerProfile())
-    ->setParseableMimeTypes([
-            'text/plain',
-            'text/html',
-    ])
-    ->setCrawlObserver(new ZeroplexObserver())
-    ->startCrawling($url);
-
-echo "\nFinished \n";
+$crawler->run('https://blog.zeroplex.tw');
