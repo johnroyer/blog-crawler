@@ -4,8 +4,8 @@
     "description": "crawler for blog",
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
-        "spatie/crawler": "^6.0"
+        "php": "^8.0|^8.1|^8.2",
+        "johnroyer/crawler-php": "^0.2"
     },
     "require-dev": {
     },
