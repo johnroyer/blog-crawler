@@ -38,6 +38,6 @@ class BlogHandler extends \Zeroplex\Crawler\Handler\AbstractHandler
     {
         $this->count++;
         echo sprintf(' %5s  ', $this->count)
-            . $request->getUri() . "\n";
+            . urldecode($request->getUri()) . "\n";
     }
 }
