@@ -1,6 +1,6 @@
 ## Introduction
 
-This is an simple demo, using `johnroyer/crawler-php` to get pages from my site.
+This is an simple demo, using [johnroyer/crawler-php](https://github.com/johnroyer/crawler-php) to get pages from my site.
 
 
 ## Usage
