@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0|^8.1|^8.2",
-        "johnroyer/crawler-php": "^0.1"
+        "johnroyer/crawler-php": "^0.2"
     },
     "require-dev": {
     },

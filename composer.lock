@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b65503df1775cc95d2fb9ceda8b63abb",
+    "content-hash": "815b5e201bb38806fa1986d71d917f99",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -339,21 +339,22 @@
         },
         {
             "name": "johnroyer/crawler-php",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnroyer/crawler-php.git",
-                "reference": "8cf56a41fc4466cd2e4de09d526b7869b2ab6d26"
+                "reference": "8a340d8e79cfbabc5876d01ba1a5fa1309da1285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnroyer/crawler-php/zipball/8cf56a41fc4466cd2e4de09d526b7869b2ab6d26",
-                "reference": "8cf56a41fc4466cd2e4de09d526b7869b2ab6d26",
+                "url": "https://api.github.com/repos/johnroyer/crawler-php/zipball/8a340d8e79cfbabc5876d01ba1a5fa1309da1285",
+                "reference": "8a340d8e79cfbabc5876d01ba1a5fa1309da1285",
                 "shasum": ""
             },
             "require": {
+                "ext-intl": "*",
                 "ext-mbstring": "*",
-                "guzzlehttp/guzzle": "^7.4",
+                "guzzlehttp/guzzle": "^7.5",
                 "php": "^8.0|^8.1|^8.2",
                 "symfony/css-selector": "^6.2",
                 "symfony/dom-crawler": "^6.2"
@@ -382,9 +383,9 @@
             "description": "crawler implement in PHP",
             "support": {
                 "issues": "https://github.com/johnroyer/crawler-php/issues",
-                "source": "https://github.com/johnroyer/crawler-php/tree/0.1.0"
+                "source": "https://github.com/johnroyer/crawler-php/tree/0.2.0"
             },
-            "time": "2023-01-11T12:26:03+00:00"
+            "time": "2023-01-14T05:38:06+00:00"
         },
         {
             "name": "masterminds/html5",
