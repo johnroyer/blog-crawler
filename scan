@@ -7,4 +7,6 @@ $crawler = new \Zeroplex\Crawler\Crawler();
 
 $crawler->addHandler(new \Crawler\BlogHandler());
 
+$crawler->setMaxConcurrent(3);
+
 $crawler->run('https://blog.zeroplex.tw');
