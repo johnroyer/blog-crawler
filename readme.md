@@ -12,3 +12,7 @@ Steps to create a crawler using `johnroyer/crawler-php`:
 1. create crawler by `new Crawler()`
 1. add handlers to crawler
 1. `run()`
+
+## Example
+
+open file `scan` to see example codes.
